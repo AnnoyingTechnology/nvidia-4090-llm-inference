@@ -1,0 +1,43 @@
+name: ulmus-qwen38-vllm
+
+services:
+  qwen:
+    image: nvidia-4090-llm-inference:0.27.1-cu129
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.cu129
+    ipc: host
+    env_file:
+      - .env
+    environment:
+      HOME: /cache
+      # The Ulmus deployment uses Huihui's abliterated target. MODEL remains
+      # overridable for controlled A/B runs without changing the service contract.
+      MODEL: ${MODEL:-/app/models/Huihui-Qwen3.8-27B-Abliterated-W4A16-AutoRound-fast}
+      BASE_MODEL_DIR: /app/models/Huihui-Qwen3.8-27B-Abliterated-W4A16-AutoRound
+      HF_REPO: ababaka/Huihui-Qwen3.8-27B-Abliterated-W4A16-AutoRound
+      HF_REVISION: c20530baefe3e77ccfc6891c2b50cce7ea28bf1e
+      # Prefer the driver mounted by NVIDIA Container Toolkit over the CUDA
+      # forward-compatibility shim bundled for datacenter GPUs.
+      LD_LIBRARY_PATH: /usr/lib/x86_64-linux-gnu/nvidia/current:/usr/local/cuda/lib64
+    ports:
+      - "0.0.0.0:${PORT:-19622}:${PORT:-19622}"
+    volumes:
+      - ./models:/app/models
+      - ./cache:/cache
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: "no"
+    stop_grace_period: 30s
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://127.0.0.1:${PORT:-19622}/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 900s
+    command: single

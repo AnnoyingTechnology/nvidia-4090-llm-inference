@@ -1,0 +1,28 @@
+{
+  "profile": "fast-32k",
+  "pass": true,
+  "vision": {
+    "pass": true,
+    "answer": "RED, BLUE",
+    "elapsed_s": 0.19209091899938358
+  },
+  "prefix_cache": {
+    "pass": true,
+    "prompt_tokens": 34231,
+    "cold_s": 14.832013240999913,
+    "warm_s": 0.37248301900035585,
+    "warm_cached_tokens": 33600,
+    "continued_cached_tokens": 33600
+  },
+  "benchmark": {
+    "decode_tok_s_median": 175.29061671467076,
+    "decode_power_w_median": 278.8642307692308,
+    "prefill": {
+      "prompt_tokens": 32817,
+      "cached_tokens": 0,
+      "ttft_s": 14.177292440999736,
+      "prefill_tok_s": 2314.757922683145,
+      "mean_prefill_board_power_w": 278.1526923076923
+    }
+  }
+}

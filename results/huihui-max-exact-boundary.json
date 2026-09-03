@@ -1,0 +1,16 @@
+{
+  "completion_tokens": 8,
+  "configured_max_model_len": 262144,
+  "elapsed_s": 210.82956593499875,
+  "finish_reason": "length",
+  "gpu_kv_cache_tokens": 272781,
+  "mean_board_power_w": 277.5906871165644,
+  "measured_at": "2026-09-03",
+  "pass": true,
+  "prefix_cache_enabled": true,
+  "profile": "huihui-max",
+  "prompt_tokens": 262136,
+  "total_tokens": 262144,
+  "vision_cpu_offload": true,
+  "vision_enabled": true
+}

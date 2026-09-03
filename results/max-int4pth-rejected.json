@@ -1,0 +1,20 @@
+{
+  "profile": "max-int4pth-262k-32k",
+  "status": "rejected",
+  "reason": "Short decode was only 1.5% faster than KVarN while 32K and full-window prefill were substantially slower.",
+  "kv_cache": "int4_per_token_head",
+  "configured_max_model_len": 262144,
+  "gpu_kv_cache_tokens": 273388,
+  "decode_tok_s_median": 156.36307564308225,
+  "decode_power_w_median": 277.453,
+  "prefill_32817_tok_s": 1599.4185355802792,
+  "vision_pass": true,
+  "prefix_cache_pass": true,
+  "boundary": {
+    "prompt_tokens": 262136,
+    "completion_tokens": 8,
+    "total_tokens": 262144,
+    "elapsed_s": 608.272669607999
+  },
+  "measured_at": "2026-09-03"
+}

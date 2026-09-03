@@ -1,0 +1,74 @@
+{
+  "benchmark": {
+    "decode_power_w_median": 278.7471428571429,
+    "decode_rows": [
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.06248141199967,
+        "decode_tok_s": 166.8581556112495,
+        "mean_board_power_w": 278.7496428571429,
+        "prefill_tok_s": 2490.2607115632186,
+        "prompt_tokens": 565,
+        "total_s": 3.289453907999814,
+        "ttft_s": 0.2268838750001123
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.0628625069998634,
+        "decode_tok_s": 166.83739437606522,
+        "mean_board_power_w": 278.7471428571429,
+        "prefill_tok_s": 2530.8130293751756,
+        "prompt_tokens": 565,
+        "total_s": 3.2861860939997314,
+        "ttft_s": 0.22324841599993306
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.0614395309999054,
+        "decode_tok_s": 166.91494142727714,
+        "mean_board_power_w": 278.6614285714286,
+        "prefill_tok_s": 2446.8901200176497,
+        "prompt_tokens": 565,
+        "total_s": 3.2924176430001353,
+        "ttft_s": 0.23090534200036927
+      }
+    ],
+    "decode_tok_s_median": 166.8581556112495,
+    "prefill": {
+      "cached_tokens": 0,
+      "completion_tokens": 1,
+      "decode_s": 1e-09,
+      "decode_tok_s": 0.0,
+      "mean_board_power_w": null,
+      "prefill_tok_s": 2244.816983408179,
+      "prompt_tokens": 8221,
+      "total_s": 3.662286788000074,
+      "ttft_s": 3.6622139179999067
+    }
+  },
+  "pass": true,
+  "prefix_cache": {
+    "answers": [
+      "CACHE-READY",
+      "CACHE-READY",
+      "CACHE-CONTINUED"
+    ],
+    "cold_cached_tokens": 0,
+    "cold_s": 22.06119427900012,
+    "continued_cached_tokens": 32832,
+    "continued_s": 1.3993625430002794,
+    "pass": true,
+    "prompt_tokens": 34231,
+    "warm_cached_tokens": 32832,
+    "warm_s": 1.3263182810001126
+  },
+  "profile": "long",
+  "vision": {
+    "answer": "RED, BLUE",
+    "elapsed_s": 0.08893756699990263,
+    "pass": true
+  }
+}

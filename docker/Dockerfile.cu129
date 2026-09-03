@@ -1,0 +1,37 @@
+# Ulmus-specific build of the upstream patched single-GPU stack.
+#
+# Ulmus currently runs NVIDIA driver 550.163.01.  CUDA 12.x is compatible
+# with the R550 driver branch, whereas the upstream prebuilt CUDA 13 image is
+# not.  Keep the application stack identical and change only the CUDA wheel
+# and matching toolkit used for JIT compilation.
+FROM nvidia/cuda:12.9.1-base-ubuntu24.04
+
+ENV DEBIAN_FRONTEND=noninteractive PIP_NO_CACHE_DIR=1 PYTHONUNBUFFERED=1
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      python3.12 python3.12-venv python3.12-dev \
+      cuda-nvcc-12-9 cuda-cudart-dev-12-9 libcurand-dev-12-9 \
+      build-essential patch curl ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+RUN python3.12 -m venv venv && venv/bin/pip install --upgrade pip
+COPY docker/requirements-cu129.txt docker/requirements-cu129.txt
+RUN venv/bin/pip install -r docker/requirements-cu129.txt && venv/bin/pip check
+
+COPY . .
+RUN set -e; SP=$(venv/bin/python -c 'import vllm, os; print(os.path.dirname(vllm.__file__))' | tail -n1); \
+    for p in patches/*.patch; do echo "== $p"; patch -p1 -d "$SP" < "$p"; done; \
+    bash kvarn/install.sh; \
+    bash verify.sh --install
+
+RUN mkdir -p /cache /app/models && chmod 1777 /cache
+# cuda-minimal-build installs the CUDA forward-compatibility shim and registers
+# it ahead of the NVIDIA Container Toolkit's host-driver mount.  GeForce does
+# not support that shim (cudaErrorCompatNotSupportedOnDevice / error 804), so
+# prefer Ulmus's mounted R550 driver library explicitly.
+ENV HOME=/cache VLLM_NO_USAGE_STATS=1 DO_NOT_TRACK=1 HF_HUB_ENABLE_HF_TRANSFER=1 \
+    LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/nvidia/current:/usr/local/cuda/lib64
+VOLUME ["/cache", "/app/models"]
+EXPOSE 19622
+ENTRYPOINT ["bash", "docker/entrypoint.sh"]
+CMD ["single"]

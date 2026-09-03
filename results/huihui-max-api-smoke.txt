@@ -1,0 +1,18 @@
+PASS greedy determinism — København, Aarhus, Odense
+PASS seeded sampling determinism — På gulvet slår hvert dryp,
+i rindetråde hvide,
+hvor skygger falder blide
+over de
+PASS logprobs/top_logprobs — 8 tokens, first='2'
+PASS n=2 — ['642', '487']
+PASS stop strings — 1/2/3/4/
+PASS json_schema structured output — {'city': 'København', 'population': 650000}
+PASS min_tokens + penalties — {'prompt_tokens': 16, 'total_tokens': 48, 'completion_tokens': 32, 'prompt_tokens_details': {'cached_tokens': 0, 'created_cache_tokens': 0, 'multimodal_tokens': None}}
+PASS streaming — 24 chunks
+PASS thinking mode — 
+
+391
+PASS completions echo+logprobs (prompt_logprobs) — ['K', 'ø', 'benhavn', ' er', ' hoved', 'st']
+PASS 20k-token prompt — prompt=21755 tok, 9.4s, 'Cirka 1.200 gange.'
+PASS thinking_token_budget -> 400 — HTTP 400 (expected 400 on the V2 runner)
+SUMMARY 12 / 12 passed

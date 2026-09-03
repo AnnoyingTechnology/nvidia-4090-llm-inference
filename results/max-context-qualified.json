@@ -1,0 +1,20 @@
+{
+  "profile": "max",
+  "server_max_model_len": 262144,
+  "kv_cache": "KVarN k4v2 g128",
+  "vision": true,
+  "vision_offload": true,
+  "prefix_cache": true,
+  "request": {
+    "prompt_tokens": 262057,
+    "completion_tokens": 8,
+    "total_tokens": 262065,
+    "headroom_tokens": 79,
+    "ttft_s": 213.24905441899955,
+    "total_s": 213.51588348899986,
+    "prefill_tok_s": 1228.8776647285893,
+    "mean_prefill_board_power_w": 276.7433131067961,
+    "decode_tok_s": 26.241690240688516
+  },
+  "pass": true
+}

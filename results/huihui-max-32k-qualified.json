@@ -1,0 +1,78 @@
+{
+  "benchmark": {
+    "decode_power_w_median": 278.29114285714286,
+    "decode_rows": [
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.743741841000883,
+        "decode_tok_s": 136.49445439950128,
+        "mean_board_power_w": 278.1025714285714,
+        "mean_prefill_board_power_w": 279.005,
+        "prefill_tok_s": 1936.558554278125,
+        "prompt_tokens": 565,
+        "total_s": 4.0355515600003855,
+        "ttft_s": 0.29175466899869207
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.745570310000403,
+        "decode_tok_s": 136.42782212248608,
+        "mean_board_power_w": 278.4705714285714,
+        "mean_prefill_board_power_w": 281.85,
+        "prefill_tok_s": 1936.4795232771519,
+        "prompt_tokens": 565,
+        "total_s": 4.03739026599942,
+        "ttft_s": 0.2917665759996453
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.7443937640000513,
+        "decode_tok_s": 136.47068983848277,
+        "mean_board_power_w": 278.29114285714286,
+        "mean_prefill_board_power_w": 278.355,
+        "prefill_tok_s": 1921.137718302902,
+        "prompt_tokens": 565,
+        "total_s": 4.038573345998884,
+        "ttft_s": 0.2940965629986749
+      }
+    ],
+    "decode_tok_s_median": 136.47068983848277,
+    "prefill": {
+      "cached_tokens": 0,
+      "completion_tokens": 1,
+      "decode_s": 1e-09,
+      "decode_tok_s": 0.0,
+      "mean_board_power_w": null,
+      "mean_prefill_board_power_w": 277.89838235294116,
+      "prefill_tok_s": 2229.5369074224022,
+      "prompt_tokens": 32817,
+      "total_s": 14.719283938000444,
+      "ttft_s": 14.719200158000604
+    }
+  },
+  "pass": true,
+  "prefix_cache": {
+    "answers": [
+      "CACHE-READY",
+      "CACHE-READY",
+      "CACHE-CONTINUED"
+    ],
+    "cold_cached_tokens": 0,
+    "cold_s": 15.441267350999624,
+    "continued_cached_tokens": 32640,
+    "continued_s": 1.0124891840005148,
+    "pass": true,
+    "prompt_tokens": 34231,
+    "warm_cached_tokens": 32640,
+    "warm_s": 0.9686188949999632
+  },
+  "profile": "huihui-max",
+  "vision": {
+    "answer": "RED, BLUE",
+    "elapsed_s": 0.18299953600035224,
+    "pass": true
+  }
+}

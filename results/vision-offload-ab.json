@@ -1,0 +1,19 @@
+{
+  "image_geometry": "2048x1024",
+  "configured_max_pixels": 2097152,
+  "uncached_runs_per_arm": 5,
+  "cpu_offloaded": {
+    "median_s": 1.0327669569996942,
+    "idle_vram_free_mib_after_boot": 1055,
+    "qualified_decode_tok_s": 175.29061671467076,
+    "stable": true
+  },
+  "gpu_resident": {
+    "median_s": 0.9837092070001745,
+    "vram_free_mib_after_image": 235,
+    "decode_tok_s": 169.30490928541596,
+    "stable": false,
+    "failure": "engine unavailable after the combined 32K/cache benchmark"
+  },
+  "decision": "CPU-offload the vision tower"
+}

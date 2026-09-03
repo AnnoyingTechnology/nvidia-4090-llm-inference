@@ -1,0 +1,15 @@
+{
+  "profile": "max",
+  "kv_cache": "kvarn_k4v2_g128",
+  "configured_max_model_len": 262144,
+  "prompt_tokens": 262136,
+  "completion_tokens": 8,
+  "total_tokens": 262144,
+  "finish_reason": "length",
+  "elapsed_s": 211.63060227400092,
+  "vision_enabled": true,
+  "vision_cpu_offload": true,
+  "prefix_cache_enabled": true,
+  "gpu_kv_cache_tokens": 272781,
+  "measured_at": "2026-09-03"
+}
