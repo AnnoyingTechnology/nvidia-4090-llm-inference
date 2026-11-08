@@ -2,13 +2,14 @@
 """Validate Ulmus vision/cache behavior and measure one-GPU latency.
 
 The script runs on the host against the loopback-only vLLM endpoint.  It uses
-only the Python standard library and samples board power through nvidia-smi.
+only the Python standard library. Board-power sampling is a separate opt-in.
 """
 
 from __future__ import annotations
 
 import argparse
 import base64
+from contextlib import nullcontext
 import json
 import os
 import statistics
@@ -173,7 +174,7 @@ def cache_canary(api: str, model: str) -> dict:
 
 
 class PowerSampler:
-    def __init__(self, interval: float = 0.1):
+    def __init__(self, interval: float = 1.0):
         self.interval = interval
         self.samples: list[tuple[float, float]] = []
         self.stop_event = threading.Event()
@@ -209,7 +210,7 @@ class PowerSampler:
         return statistics.mean(values) if values else None
 
 
-def stream_measure(api: str, payload: dict, sampler: PowerSampler) -> dict:
+def stream_measure(api: str, payload: dict, sampler: PowerSampler | None) -> dict:
     body = {**payload, "stream": True, "stream_options": {"include_usage": True}}
     request = urllib.request.Request(
         api + "/chat/completions",
@@ -254,13 +255,13 @@ def stream_measure(api: str, payload: dict, sampler: PowerSampler) -> dict:
         "decode_s": decode_s,
         "total_s": ended - started,
         "prefill_tok_s": (prompt_tokens - cached) / max(first - started, 1e-9),
-        "mean_prefill_board_power_w": sampler.mean_between(started, first),
+        "mean_prefill_board_power_w": sampler.mean_between(started, first) if sampler else None,
         "decode_tok_s": max(completion_tokens - 1, 0) / decode_s,
-        "mean_board_power_w": sampler.mean_between(first, last),
+        "mean_board_power_w": sampler.mean_between(first, last) if sampler else None,
     }
 
 
-def benchmark(api: str, model: str, prefill_target: int = 8192) -> dict:
+def benchmark(api: str, model: str, prefill_target: int = 8192, sample_power: bool = False) -> dict:
     common = {
         "model": model,
         "temperature": 0,
@@ -270,7 +271,7 @@ def benchmark(api: str, model: str, prefill_target: int = 8192) -> dict:
     decode_prompt = make_prompt(512)
     prefill_prompt = make_prompt(prefill_target)
 
-    with PowerSampler() as sampler:
+    with PowerSampler() if sample_power else nullcontext() as sampler:
         stream_measure(
             api,
             {
@@ -329,6 +330,8 @@ def main() -> int:
     parser.add_argument("--profile", default="unknown")
     parser.add_argument("--benchmark", action="store_true")
     parser.add_argument("--prefill-target", type=int, default=8192)
+    parser.add_argument("--sample-power", action="store_true",
+                        help="Opt in to separate 1 Hz power sampling; disabled for latency measurements")
     args = parser.parse_args()
 
     report = {
@@ -338,7 +341,7 @@ def main() -> int:
     }
     if args.benchmark:
         report["benchmark"] = benchmark(
-            args.api, args.model, prefill_target=args.prefill_target
+            args.api, args.model, prefill_target=args.prefill_target, sample_power=args.sample_power
         )
     report["pass"] = report["vision"]["pass"] and report["prefix_cache"]["pass"]
     print(json.dumps(report, indent=2, sort_keys=True))

@@ -1,36 +1,5 @@
 {
   "observed_date": "2026-11-08",
-  "baseline": {
-    "fresh_starts": 2,
-    "decode_median_tok_s": 137.19584872742655,
-    "per_start_decode_medians": [
-      137.1455929447729,
-      137.24593861768992
-    ],
-    "prefill_median_tok_s": 2254.3335252820525,
-    "decode_board_power_median_w": 278.13950420168067,
-    "warm_cache_median_s": 0.9511512760004734,
-    "warm_cached_tokens": [
-      32640,
-      32640
-    ]
-  },
-  "selected": {
-    "fresh_starts": 2,
-    "decode_median_tok_s": 158.05262762348326,
-    "per_start_decode_medians": [
-      157.97228882132407,
-      158.10454381904435
-    ],
-    "prefill_median_tok_s": 2264.7783767048695,
-    "decode_board_power_median_w": 278.37166666666667,
-    "warm_cache_median_s": 0.19554676700045093,
-    "warm_cached_tokens": [
-      34048,
-      34048
-    ]
-  },
-  "decode_gain_pct": 15.202193863382751,
   "prefill_gain_pct": 0.4633232530004694,
   "quality": {
     "baseline": {
@@ -329,5 +298,57 @@
     "opencode_output_reserve": 8192
   },
   "scope": "Capacity profile on one RTX 4090; same target and drafter files, same upgraded CPU/RAM and 280 W limit. Other profiles and broad quality parity are not certified.",
-  "attribution": "Matched complete runtime A/B, with dense retention on the selected candidate. Individual kernel contributions were not isolated. The sparse-default diagnostic measured 142.10 tok/s and a 1.94 s warm-cache request; selected dense retention reused 34048 of 34231 prompt tokens. Do not add these deltas."
+  "attribution": "Original log windows show roughly 3.0-3.1 tokens per DFlash verification step, selected follow-up 3.44, restored baseline 3.74. Draft acceptance explains most of the original gap; a universal +15% runtime claim is withdrawn. Whole-step generation time is about 22.0 ms old and 21.7 ms new. Individual GPU kernel contributions were not isolated. Warm-prefix work reliably drops from 1591 to 183 reprocessed tokens.",
+  "original_cohort": {
+    "baseline": {
+      "fresh_starts": 2,
+      "decode_median_tok_s": 137.19584872742655,
+      "per_start_decode_medians": [
+        137.1455929447729,
+        137.24593861768992
+      ],
+      "prefill_median_tok_s": 2254.3335252820525,
+      "decode_board_power_median_w": 278.13950420168067,
+      "warm_cache_median_s": 0.9511512760004734,
+      "warm_cached_tokens": [
+        32640,
+        32640
+      ]
+    },
+    "selected": {
+      "fresh_starts": 2,
+      "decode_median_tok_s": 158.05262762348326,
+      "per_start_decode_medians": [
+        157.97228882132407,
+        158.10454381904435
+      ],
+      "prefill_median_tok_s": 2264.7783767048695,
+      "decode_board_power_median_w": 278.37166666666667,
+      "warm_cache_median_s": 0.19554676700045093,
+      "warm_cached_tokens": [
+        34048,
+        34048
+      ]
+    },
+    "decode_gain_pct": 15.202193863382751
+  },
+  "decode_gain_pct": null,
+  "decode_gain_status": "The original +15.2% is not a dependable engine speedup; a restarted baseline is faster on the same input with a different output/acceptance trajectory.",
+  "attribution_follow_up": {
+    "baseline_decode_tok_s": 169.17919226332214,
+    "selected_decode_tok_s": 158.26501390659703,
+    "observed_delta_pct": -6.451253378570055,
+    "baseline_tokens_per_step": 3.7445255474452557,
+    "selected_tokens_per_step": 3.436241610738255,
+    "baseline_output_hashes": [
+      "cea2942d9a499d47c52209ad262d4e38c855230045701801c60d404a0e70dca5"
+    ],
+    "selected_output_hashes": [
+      "abf07193d2cc3d2db86e1cb63009df8ca480919df043e39694a9dfaf77c145ad"
+    ],
+    "matched_output": false,
+    "power_polling_explains_discrepancy": false,
+    "original_harness_commit": "af4b63d52e5bce464ecc585519df60070c700d63",
+    "original_harness_sha256": "94315ca445905e2f5f7dab80894d86d854653c35c38271fabf86171d5fca2106"
+  }
 }

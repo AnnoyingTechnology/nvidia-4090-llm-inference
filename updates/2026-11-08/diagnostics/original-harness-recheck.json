@@ -1,0 +1,78 @@
+{
+  "benchmark": {
+    "decode_power_w_median": 277.72035714285715,
+    "decode_rows": [
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.019831224999507,
+        "decode_tok_s": 169.21475470871172,
+        "mean_board_power_w": 277.9814285714286,
+        "mean_prefill_board_power_w": 277.46,
+        "prefill_tok_s": 1990.2073905968814,
+        "prompt_tokens": 565,
+        "total_s": 3.3038148680007,
+        "ttft_s": 0.2838900120004837
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.022366728999259,
+        "decode_tok_s": 169.072798180649,
+        "mean_board_power_w": 277.70714285714286,
+        "mean_prefill_board_power_w": 277.72333333333336,
+        "prefill_tok_s": 2104.2230307437035,
+        "prompt_tokens": 565,
+        "total_s": 3.2909664079998038,
+        "ttft_s": 0.26850765900053375
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.0200306750011805,
+        "decode_tok_s": 169.2035793642395,
+        "mean_board_power_w": 277.72035714285715,
+        "mean_prefill_board_power_w": 278.24,
+        "prefill_tok_s": 2101.9936502063374,
+        "prompt_tokens": 565,
+        "total_s": 3.2889147540008707,
+        "ttft_s": 0.2687924389992986
+      }
+    ],
+    "decode_tok_s_median": 169.2035793642395,
+    "prefill": {
+      "cached_tokens": 0,
+      "completion_tokens": 1,
+      "decode_s": 1e-09,
+      "decode_tok_s": 0.0,
+      "mean_board_power_w": null,
+      "mean_prefill_board_power_w": 277.76044444444443,
+      "prefill_tok_s": 2262.019600123777,
+      "prompt_tokens": 32817,
+      "total_s": 14.507908150999356,
+      "ttft_s": 14.507831850000002
+    }
+  },
+  "pass": true,
+  "prefix_cache": {
+    "answers": [
+      "CACHE-READY",
+      "CACHE-READY",
+      "CACHE-CONTINUED"
+    ],
+    "cold_cached_tokens": 0,
+    "cold_s": 15.22385759700046,
+    "continued_cached_tokens": 32640,
+    "continued_s": 0.9946387290001439,
+    "pass": true,
+    "prompt_tokens": 34231,
+    "warm_cached_tokens": 32640,
+    "warm_s": 0.9474401959996612
+  },
+  "profile": "original-harness-recheck",
+  "vision": {
+    "answer": "RED, BLUE",
+    "elapsed_s": 0.09999766500004625,
+    "pass": true
+  }
+}
