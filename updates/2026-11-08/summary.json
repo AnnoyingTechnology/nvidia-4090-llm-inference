@@ -1,0 +1,333 @@
+{
+  "observed_date": "2026-11-08",
+  "baseline": {
+    "fresh_starts": 2,
+    "decode_median_tok_s": 137.19584872742655,
+    "per_start_decode_medians": [
+      137.1455929447729,
+      137.24593861768992
+    ],
+    "prefill_median_tok_s": 2254.3335252820525,
+    "decode_board_power_median_w": 278.13950420168067,
+    "warm_cache_median_s": 0.9511512760004734,
+    "warm_cached_tokens": [
+      32640,
+      32640
+    ]
+  },
+  "selected": {
+    "fresh_starts": 2,
+    "decode_median_tok_s": 158.05262762348326,
+    "per_start_decode_medians": [
+      157.97228882132407,
+      158.10454381904435
+    ],
+    "prefill_median_tok_s": 2264.7783767048695,
+    "decode_board_power_median_w": 278.37166666666667,
+    "warm_cache_median_s": 0.19554676700045093,
+    "warm_cached_tokens": [
+      34048,
+      34048
+    ]
+  },
+  "decode_gain_pct": 15.202193863382751,
+  "prefill_gain_pct": 0.4633232530004694,
+  "quality": {
+    "baseline": {
+      "passed": 26,
+      "completed": 30,
+      "total": 30,
+      "all_natural": true
+    },
+    "candidate": {
+      "passed": 27,
+      "completed": 30,
+      "total": 30,
+      "all_natural": true
+    },
+    "source_sha256": "03b7d02ea58fef79b8bcc28a94b5c43a9735168145cd0f50a39f0bb0b44ed0ba",
+    "grader_image": "sha256:aaf948b4b19a72a60c191ef093c8d8daa397ebcd77b8d03b1a644f517687f891",
+    "positive_and_negative_controls": 30,
+    "gains": [
+      "literal-endpoint"
+    ],
+    "losses": [],
+    "cases": [
+      {
+        "id": "merge-patch",
+        "request_sha256": "8c3788300dd1b4921862596610f02033146f96ae8a4fa7d32c1cddb0237f1aa8",
+        "baseline": false,
+        "candidate": false
+      },
+      {
+        "id": "json-pointer",
+        "request_sha256": "25a197cb3ee4fb4d1c1b66d1aa5918def62c22fccc2282c55a57b435ffee2b4e",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "environment-expansion",
+        "request_sha256": "3f6708be3baa242d9c5ad0bce7593299907784922326c9950b47d697274c0486",
+        "baseline": false,
+        "candidate": false
+      },
+      {
+        "id": "sandbox-path",
+        "request_sha256": "2a3ff92963aae1f7153c57a46fc574543a655a6c2d33cb3152a847bd17818134",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "numeric-version-sort",
+        "request_sha256": "8830218fbecb1cc775d3d4f8a70d88c92c3d07a2eb159f6e13ef47036c74f37c",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "dependency-order",
+        "request_sha256": "dd58d89b261bcb1ab0bc5fba105187aafea3d314a9cb82604f4b2fb2f7f8099d",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "dependency-impact",
+        "request_sha256": "6f5cf967d509302e1ff443fa6c2d8fa2dde9bf60d78853159f40d04d73280a1a",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "first-fit-capacity",
+        "request_sha256": "e52d8b7539404c2aa40108c2408d34932aa9957caf8a5c43a597a1400c5ff3b4",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "rollout-rounding",
+        "request_sha256": "8b8280ac67c447c73212202736d8c6d88b47d567a82b48d7333958f51188dc6c",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "path-route",
+        "request_sha256": "202aecb0d37ad94b096f02ad9e9b8bd0ece95186b92c20169b58ee97e37a799f",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "journal-priority",
+        "request_sha256": "4f8ccfe65af767db9f796c05a872631b895bd1bb16103ddea06fb9edeb103e3f",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "nearest-rank-percentile",
+        "request_sha256": "2c96e6c9e07158727dc6a52f57173a2900a9633e672bd7dc58617c49d1b9610f",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "counter-reset-rate",
+        "request_sha256": "72eb28a33b2f1a285b634984d6d5b5f056ad3a6ab840709b2e7934fc45312e20",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "latest-alert",
+        "request_sha256": "2d9efcb573e699830846886603d1c25ebfd866e06e3877e7633f2812747d703f",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "expiry-cache",
+        "request_sha256": "504be4b0dcc5045ba65703d20b77991b5c5350d35cfb334925160cb4eee76e99",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "token-bucket",
+        "request_sha256": "ce0e8ddc442387e482eaa20ff5ff25b194320e6f766b062cda7b22f6a191e444",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "backoff",
+        "request_sha256": "1f3f8c0e4dcab3ca300522f72fa112bc943d231a93cb278bd93c0b1f6dd5d9d1",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "idempotency-conflicts",
+        "request_sha256": "52ac8158672df2d6104ea4a6e54c83b2e286aaa62c7064cfaa5b1a99346486c6",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "memory-info",
+        "request_sha256": "29896f5d33c726637709edf5801812d4704671c51985cb1a4965bb66f5b726d7",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "cgroup-quota",
+        "request_sha256": "e2f4e74b3cf47f3f1c81744f7d961f85e076008378cf67d99655d2ad4533319b",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "canonical-query",
+        "request_sha256": "8dc76184ae87a3e72dfaf29555d5fdda40eaa23b0395ca1cab145a57ad8a21ac",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "duration-milliseconds",
+        "request_sha256": "43b845693ed1fc344e01feffe0b0b26ba60ee932d9718fa021476d56a4fdc2e1",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "literal-endpoint",
+        "request_sha256": "ab79f4adc3f900cc8194b99a90ee40b0462824320276c7c64bcc47c676b2e2f4",
+        "baseline": false,
+        "candidate": true
+      },
+      {
+        "id": "retry-after",
+        "request_sha256": "2148c772de88523120bf96712710f2640df04304c83322a63fc7bd5f9641cf4e",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "access-log-summary",
+        "request_sha256": "2e5481a0efe281c17b6455457fa1b9f8141b763d3cd5772e46a8f0e990c025f7",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "unit-dependencies",
+        "request_sha256": "048021d99cf97a7ae06af3f625767ce963776373ebd9c5d162d4635ad38bc61d",
+        "baseline": false,
+        "candidate": false
+      },
+      {
+        "id": "interval-union",
+        "request_sha256": "72c21cee06d2fe0afedb0937c0af9b68629b9a5449b6d1190bde187285991ed9",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "dns-wildcard",
+        "request_sha256": "99c50d3aa5b6222ef4df6f6ddf339f4003c1e04d492daae3a2e984e7d050efa4",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "log-rotation-plan",
+        "request_sha256": "6c33007a8569cd6a9e06a2506e9c61a1ac995b7f98283b8063df39df4836838a",
+        "baseline": true,
+        "candidate": true
+      },
+      {
+        "id": "typed-json-equality",
+        "request_sha256": "1e855b01bec9205c0e5339f2d28a2274cb4e685dce4adf3927aee13383bd6e95",
+        "baseline": true,
+        "candidate": true
+      }
+    ]
+  },
+  "api_checks": {
+    "passed": 12,
+    "total": 12
+  },
+  "maximum_images": {
+    "image_pixels": 2097152,
+    "images": [
+      {
+        "pass": true,
+        "answer": "RED, BLUE",
+        "elapsed_s": 1.0905786709990934,
+        "usage": {
+          "prompt_tokens": 2081,
+          "total_tokens": 2085,
+          "completion_tokens": 4,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "created_cache_tokens": 0,
+            "multimodal_tokens": {
+              "image": 2048
+            }
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        }
+      },
+      {
+        "pass": true,
+        "answer": "BLUE, RED",
+        "elapsed_s": 1.051066265999907,
+        "usage": {
+          "prompt_tokens": 2081,
+          "total_tokens": 2085,
+          "completion_tokens": 4,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "created_cache_tokens": 0,
+            "multimodal_tokens": {
+              "image": 2048
+            }
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        }
+      }
+    ],
+    "cache_after_images": {
+      "pass": true,
+      "cold_s": 15.287634644999343,
+      "warm_s": 0.19545521100008045,
+      "continued_s": 0.23775141000078293,
+      "cold_cached_tokens": 0,
+      "warm_cached_tokens": 34048,
+      "continued_cached_tokens": 34048,
+      "prompt_tokens": 34231,
+      "answers": [
+        "CACHE-READY",
+        "CACHE-READY",
+        "CACHE-CONTINUED"
+      ]
+    },
+    "pass": true
+  },
+  "boundary": {
+    "request_sha256": "96e8c5e8046f4eaaab01a4a1da3788979c10a82272fbee2bedf13a8789ff3bc3",
+    "usage": {
+      "prompt_tokens": 262128,
+      "total_tokens": 262136,
+      "completion_tokens": 8,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "created_cache_tokens": null,
+        "multimodal_tokens": null
+      },
+      "completion_tokens_details": null
+    },
+    "elapsed_s": 210.52798937400075,
+    "pass": true
+  },
+  "cache_alignment": {
+    "tested_residues": 128,
+    "broken": 0,
+    "unique_answer_hashes": 1
+  },
+  "context": {
+    "target_server_limit": 262136,
+    "draft_native_positions": 262144,
+    "lookahead_positions": 8,
+    "opencode_input": 245760,
+    "opencode_output_reserve": 8192
+  },
+  "scope": "Capacity profile on one RTX 4090; same target and drafter files, same upgraded CPU/RAM and 280 W limit. Other profiles and broad quality parity are not certified.",
+  "attribution": "Matched complete runtime A/B, with dense retention on the selected candidate. Individual kernel contributions were not isolated. The sparse-default diagnostic measured 142.10 tok/s and a 1.94 s warm-cache request; selected dense retention reused 34048 of 34231 prompt tokens. Do not add these deltas."
+}

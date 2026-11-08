@@ -1,0 +1,25 @@
+# November runtime. Build updates/2026-11-08/build.sh before starting.
+services:
+  qwen:
+    image: ulmus/qwen38-vllm:0.32.0-cu129
+    build: !reset null
+    environment:
+      # Preserve dense retention for this single-conversation service.
+      PREFIX_RETENTION: ""
+      DRAFT: /app/models/Qwen3.8-27B-DFlash2-W4A16
+      CUDA_HOME: /usr/local/cuda
+      # Existing deployment uses host IPC; never unlink other engines' regions.
+      VLLM_OFFLOAD_KEEP_SHM: "1"
+    entrypoint:
+      - /bin/bash
+      - -ec
+      - |
+        cd /app
+        bash docker/prepare.sh
+        cd /next
+        bash verify.sh --install
+        exec bash single-user/start_qwen.sh
+    command: []
+    volumes:
+      - ./models:/next/models:ro
+      - ./cache/runtime-032:/cache

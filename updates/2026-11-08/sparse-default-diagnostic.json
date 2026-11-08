@@ -1,0 +1,78 @@
+{
+  "benchmark": {
+    "decode_power_w_median": 278.34939393939396,
+    "decode_rows": [
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.5975666329995875,
+        "decode_tok_s": 142.04045459859552,
+        "mean_board_power_w": 278.34939393939396,
+        "mean_prefill_board_power_w": 277.77666666666664,
+        "prefill_tok_s": 2057.9540850562107,
+        "prompt_tokens": 565,
+        "total_s": 3.872207835000154,
+        "ttft_s": 0.27454451199992036
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.5953451069999574,
+        "decode_tok_s": 142.12821990442822,
+        "mean_board_power_w": 278.27454545454543,
+        "mean_prefill_board_power_w": 278.6433333333334,
+        "prefill_tok_s": 2070.5027818344734,
+        "prompt_tokens": 565,
+        "total_s": 3.86828863700066,
+        "ttft_s": 0.27288058000067394
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.596135212000263,
+        "decode_tok_s": 142.09699298702637,
+        "mean_board_power_w": 278.5284848484849,
+        "mean_prefill_board_power_w": 279.3066666666667,
+        "prefill_tok_s": 2064.980627648902,
+        "prompt_tokens": 565,
+        "total_s": 3.869833278000442,
+        "ttft_s": 0.27361031500004174
+      }
+    ],
+    "decode_tok_s_median": 142.09699298702637,
+    "prefill": {
+      "cached_tokens": 0,
+      "completion_tokens": 1,
+      "decode_s": 1e-09,
+      "decode_tok_s": 0.0,
+      "mean_board_power_w": null,
+      "mean_prefill_board_power_w": 278.0288888888889,
+      "prefill_tok_s": 2272.0895629660517,
+      "prompt_tokens": 32817,
+      "total_s": 14.443665013999635,
+      "ttft_s": 14.44353274399964
+    }
+  },
+  "pass": true,
+  "prefix_cache": {
+    "answers": [
+      "CACHE-READY",
+      "CACHE-READY",
+      "CACHE-CONTINUED"
+    ],
+    "cold_cached_tokens": 0,
+    "cold_s": 15.129158063999967,
+    "continued_cached_tokens": 34048,
+    "continued_s": 0.24003089200050454,
+    "pass": true,
+    "prompt_tokens": 34231,
+    "warm_cached_tokens": 30464,
+    "warm_s": 1.940173133000826
+  },
+  "profile": "candidate-0.32.0-max-minus-eight-diagnostic",
+  "vision": {
+    "answer": "RED, BLUE",
+    "elapsed_s": 0.17514986199967097,
+    "pass": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "request_sha256": "96e8c5e8046f4eaaab01a4a1da3788979c10a82272fbee2bedf13a8789ff3bc3",
+  "usage": {
+    "prompt_tokens": 262128,
+    "total_tokens": 262136,
+    "completion_tokens": 8,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "created_cache_tokens": null,
+      "multimodal_tokens": null
+    },
+    "completion_tokens_details": null
+  },
+  "elapsed_s": 210.52798937400075,
+  "pass": true
+}

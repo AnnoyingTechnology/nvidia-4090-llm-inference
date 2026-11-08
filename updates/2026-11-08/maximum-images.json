@@ -1,0 +1,61 @@
+{
+  "image_pixels": 2097152,
+  "images": [
+    {
+      "pass": true,
+      "answer": "RED, BLUE",
+      "elapsed_s": 1.0905786709990934,
+      "usage": {
+        "prompt_tokens": 2081,
+        "total_tokens": 2085,
+        "completion_tokens": 4,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0,
+          "multimodal_tokens": {
+            "image": 2048
+          }
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    },
+    {
+      "pass": true,
+      "answer": "BLUE, RED",
+      "elapsed_s": 1.051066265999907,
+      "usage": {
+        "prompt_tokens": 2081,
+        "total_tokens": 2085,
+        "completion_tokens": 4,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0,
+          "multimodal_tokens": {
+            "image": 2048
+          }
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  ],
+  "cache_after_images": {
+    "pass": true,
+    "cold_s": 15.287634644999343,
+    "warm_s": 0.19545521100008045,
+    "continued_s": 0.23775141000078293,
+    "cold_cached_tokens": 0,
+    "warm_cached_tokens": 34048,
+    "continued_cached_tokens": 34048,
+    "prompt_tokens": 34231,
+    "answers": [
+      "CACHE-READY",
+      "CACHE-READY",
+      "CACHE-CONTINUED"
+    ]
+  },
+  "pass": true
+}

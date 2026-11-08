@@ -1,0 +1,78 @@
+{
+  "benchmark": {
+    "decode_power_w_median": 278.19529411764705,
+    "decode_rows": [
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.7239122749997478,
+        "decode_tok_s": 137.22127758770435,
+        "mean_board_power_w": 278.02342857142855,
+        "mean_prefill_board_power_w": 279.79,
+        "prefill_tok_s": 1983.0648786448387,
+        "prompt_tokens": 565,
+        "total_s": 4.008873239001332,
+        "ttft_s": 0.28491251400009787
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.723243143998843,
+        "decode_tok_s": 137.24593861768992,
+        "mean_board_power_w": 278.19529411764705,
+        "mean_prefill_board_power_w": 279.15000000000003,
+        "prefill_tok_s": 1985.759070829756,
+        "prompt_tokens": 565,
+        "total_s": 4.007840910000596,
+        "ttft_s": 0.2845259570003691
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.723094074000983,
+        "decode_tok_s": 137.2514338459515,
+        "mean_board_power_w": 278.2982857142857,
+        "mean_prefill_board_power_w": 280.06,
+        "prefill_tok_s": 1989.8806643974237,
+        "prompt_tokens": 565,
+        "total_s": 4.007100898999852,
+        "ttft_s": 0.28393662499911443
+      }
+    ],
+    "decode_tok_s_median": 137.24593861768992,
+    "prefill": {
+      "cached_tokens": 0,
+      "completion_tokens": 1,
+      "decode_s": 1e-09,
+      "decode_tok_s": 0.0,
+      "mean_board_power_w": null,
+      "mean_prefill_board_power_w": 277.97251851851854,
+      "prefill_tok_s": 2255.9607245762895,
+      "prompt_tokens": 32817,
+      "total_s": 14.54686779199983,
+      "ttft_s": 14.54679580300035
+    }
+  },
+  "pass": true,
+  "prefix_cache": {
+    "answers": [
+      "CACHE-READY",
+      "CACHE-READY",
+      "CACHE-CONTINUED"
+    ],
+    "cold_cached_tokens": 0,
+    "cold_s": 15.225754740999037,
+    "continued_cached_tokens": 32640,
+    "continued_s": 0.9968132519989013,
+    "pass": true,
+    "prompt_tokens": 34231,
+    "warm_cached_tokens": 32640,
+    "warm_s": 0.9505202190011914
+  },
+  "profile": "baseline-0.27.1-max-boot2-20261108",
+  "vision": {
+    "answer": "RED, BLUE",
+    "elapsed_s": 0.1658397210012481,
+    "pass": true
+  }
+}

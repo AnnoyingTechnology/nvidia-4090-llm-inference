@@ -1,5 +1,19 @@
 # NVIDIA RTX 4090 local inference
 
+## Qualified November candidate
+
+A matched vLLM 0.32.0 / CUDA 12.9 candidate reached **158.05 tok/s**, versus
+137.20 tok/s on the current runtime (+15.2%). Vision, prefix caching and the
+280 W limit were retained; the 30-function gate improved from 26/30 to 27/30.
+All 128 cache alignments, maximum-size images, API checks and its supported
+capacity boundary passed.
+
+The candidate reserves eight DFlash lookahead positions and accepts **262,136
+server tokens**, while OpenCode retains its existing token limits. The current
+262,144-token deployment is retained pending acceptance of that reserve.
+The candidate is opt-in through `compose.update.yaml` and `profiles/max-032.env`.
+See the [qualification, reproduction and rollback record](updates/2026-11-08/README.md).
+
 This repository records the quality-gated optimization of Qwen3.8-27B for one
 24 GiB RTX 4090. The selected full-window service sustains **136.47 tok/s** with
 vision, automatic prefix caching and the complete 262,144-token model context.

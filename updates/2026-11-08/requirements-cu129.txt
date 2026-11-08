@@ -1,0 +1,34 @@
+--extra-index-url https://download.pytorch.org/whl/cu129
+torch==2.13.0+cu129
+torchvision==0.28.0+cu129
+vllm @ https://github.com/vllm-project/vllm/releases/download/v0.32.0/vllm-0.32.0%2Bcu129-cp38-abi3-manylinux_2_28_x86_64.whl
+# The current vLLM runtime stack. The benchmark tables in the READMEs were
+# measured on the previous v0.27.1 stack and must be re-run after this upgrade.
+# vllm==0.32.0 resolves the compatible torch/cu130, Triton, and FlashInfer set;
+# the rest is pinned to the reference venv resolution.
+transformers==5.19.0
+tokenizers==0.23.3
+compressed-tensors==0.17.0
+huggingface_hub==1.32.0
+hf_transfer==0.1.9
+ninja==1.13.0
+# bench/run_benchmarks.sh calls `vllm bench serve`, whose dataset loader imports
+# pandas through a PlaceholderModule -- so without this every cohort dies on
+# "Please install vllm[bench] for bench support" and the fix is not obvious from
+# the message (#22). Installing the vllm[bench] extra instead would reinstall
+# vLLM and revert the whole patch stack. Only pandas is needed: the extra's other
+# members are for HF-hosted --dataset-name values and the plotting subcommands,
+# and this repo's scripts use only `random` and `custom`.
+pandas==3.0.5
+# bench/quality_battery.py -- the second half of the field-test protocol -- reads
+# its wikitext/fineweb-2/gsm8k parquet with `import pyarrow.parquet`, and nothing
+# above pulls pyarrow in: pandas 3.0 declares it only under the `parquet`/`all`
+# extras, and vLLM not at all. Without this line every Docker run of the quality
+# battery dies on ModuleNotFoundError before the first request (#159).
+pyarrow==20.0.0
+# The CUDA 13 compiler set, pinned to the runtime vLLM's torch resolves
+# (nvidia-cuda-runtime 13.0.96). FlashInfer's JIT needs nvcc to EQUAL the headers'
+# CUDART_VERSION; nothing else pins these, and in September 2026 pip started resolving
+# nvcc/crt 13.4.92, cccl 13.3 and nvvm 13.4 beside the 13.0 runtime, after which every
+# FlashInfer JIT failed with "CUDA compiler and CUDA toolkit headers are incompatible"
+# (found on the reference 3090 while verifying #189; a Sep-23 venv had this set).

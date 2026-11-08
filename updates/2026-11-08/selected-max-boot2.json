@@ -1,0 +1,78 @@
+{
+  "benchmark": {
+    "decode_power_w_median": 278.2973333333333,
+    "decode_rows": [
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.2321559769989108,
+        "decode_tok_s": 158.0988057619882,
+        "mean_board_power_w": 278.22566666666665,
+        "mean_prefill_board_power_w": 278.7366666666667,
+        "prefill_tok_s": 2070.9323810013716,
+        "prompt_tokens": 565,
+        "total_s": 3.5050447699995857,
+        "ttft_s": 0.2728239730004134
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.231751904000703,
+        "decode_tok_s": 158.11857320093617,
+        "mean_board_power_w": 278.2973333333333,
+        "mean_prefill_board_power_w": 279.45000000000005,
+        "prefill_tok_s": 2071.2725014426596,
+        "prompt_tokens": 565,
+        "total_s": 3.5046010469995963,
+        "ttft_s": 0.2727791729994351
+      },
+      {
+        "cached_tokens": 0,
+        "completion_tokens": 512,
+        "decode_s": 3.232038672998897,
+        "decode_tok_s": 158.10454381904435,
+        "mean_board_power_w": 278.43966666666665,
+        "mean_prefill_board_power_w": 279.19666666666666,
+        "prefill_tok_s": 2077.0638172926488,
+        "prompt_tokens": 565,
+        "total_s": 3.5041234370000893,
+        "ttft_s": 0.2720186040005501
+      }
+    ],
+    "decode_tok_s_median": 158.10454381904435,
+    "prefill": {
+      "cached_tokens": 0,
+      "completion_tokens": 1,
+      "decode_s": 1e-09,
+      "decode_tok_s": 0.0,
+      "mean_board_power_w": null,
+      "mean_prefill_board_power_w": 277.98503703703705,
+      "prefill_tok_s": 2269.9755184278006,
+      "prompt_tokens": 32817,
+      "total_s": 14.457072679999328,
+      "ttft_s": 14.456984110000121
+    }
+  },
+  "pass": true,
+  "prefix_cache": {
+    "answers": [
+      "CACHE-READY",
+      "CACHE-READY",
+      "CACHE-CONTINUED"
+    ],
+    "cold_cached_tokens": 0,
+    "cold_s": 15.151568879000479,
+    "continued_cached_tokens": 34048,
+    "continued_s": 0.23709185000006983,
+    "pass": true,
+    "prompt_tokens": 34231,
+    "warm_cached_tokens": 34048,
+    "warm_s": 0.1953779060004308
+  },
+  "profile": "candidate-0.32.0-dense-boot2",
+  "vision": {
+    "answer": "RED, BLUE",
+    "elapsed_s": 0.1480769939989841,
+    "pass": true
+  }
+}
